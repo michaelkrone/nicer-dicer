@@ -19,17 +19,14 @@
 	<title>Roll a dice</title>
 </svelte:head>
 
-<main
-	class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20
-	lg:px-8 xl:mt-28">
-	<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-		<div
-			class="flex flex-wrap -mx-2 -my-2 md:-mx-4 md:-my-4 justify-center
-			items-center">
-			<div class=" sm:w-1/2 md:w-1/3 lg:w-1/4 px-2 py-2 md:px-4 md:py-4">
-				<NumberDisplay {number} />
-			</div>
+<main>
+	<div
+		class="flex flex-wrap -mx-2 -my-2 md:-mx-4 md:-my-4 justify-center
+		lg:justify-start">
+		<div class="px-2 py-2 md:px-4 md:py-4">
+			<NumberDisplay {number} />
 		</div>
+
 	</div>
 
 	<div class="rounded-md shadow mt-6 sm:mt-8 md:mt-10">

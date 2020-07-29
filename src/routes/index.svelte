@@ -1,9 +1,7 @@
 <svelte:head>
 	<title>Nicer Dicer</title>
 </svelte:head>
-<main
-	class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20
-	lg:px-8 xl:mt-28">
+<main>
 	<div class="sm:text-center lg:text-left">
 		<h2
 			class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900
@@ -27,7 +25,7 @@
 					text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none
 					focus:border-indigo-700 focus:shadow-outline-indigo transition
 					duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
-					Just roll some dice
+					Roll the dice
 				</a>
 			</div>
 			<div class="mt-3 sm:mt-0 sm:ml-3">
@@ -35,9 +33,10 @@
 					href="/roll"
 					class="w-full flex items-center justify-center px-8 py-3 border
 					border-transparent text-base leading-6 font-medium rounded-md
-					text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50
-					focus:outline-none focus:shadow-outline-indigo focus:border-indigo-300
-					transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+					text-white bg-yellow-500 hover:border-yellow-500 hover:text-yellow-500
+					hover:bg-yellow-200 focus:outline-none focus:shadow-outline-yellow
+					focus:border-yellow-300 transition duration-150 ease-in-out md:py-4
+					md:text-lg md:px-10">
 					Dice with friends
 				</a>
 			</div>

@@ -9,23 +9,23 @@
 
 <style>
 	.nav-item {
-		@apply ml-4 px-3 py-2 rounded-md text-sm font-medium text-purple-300;
+		@apply ml-4 px-3 py-2 rounded-md text-sm font-medium text-indigo-100;
 	}
 
 	.nav-item:hover {
-		@apply text-white bg-purple-700;
+		@apply text-white bg-indigo-700;
 	}
 
 	.nav-item:focus {
-		@apply outline-none text-white bg-purple-700;
+		@apply outline-none text-white bg-indigo-700;
 	}
 
 	[aria-current] {
-		@apply px-3 py-2 rounded-md text-sm font-medium text-white bg-purple-900;
+		@apply px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-900;
 	}
 
 	[aria-current]:focus {
-		@apply outline-none text-white bg-purple-700;
+		@apply outline-none text-white bg-indigo-700;
 	}
 </style>
 
@@ -40,7 +40,7 @@
 			</a>
 		</li> -->
 
-<nav class="bg-purple-800">
+<nav class="bg-indigo-800">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center">
@@ -76,9 +76,9 @@
 			<div class="hidden md:block">
 				<div class="ml-4 flex items-center md:ml-6">
 					<button
-						class="p-1 border-2 border-transparent text-purple-400 rounded-full
+						class="p-1 border-2 border-transparent text-indigo-400 rounded-full
 						hover:text-white focus:outline-none focus:text-white
-						focus:bg-purple-700"
+						focus:bg-indigo-700"
 						aria-label="Notifications">
 						<svg
 							class="h-6 w-6"
@@ -103,8 +103,8 @@
 				<button
 					on:click={toggleMenu}
 					class="inline-flex items-center justify-center p-2 rounded-md
-					text-purple-400 hover:text-white hover:bg-purple-700
-					focus:outline-none focus:bg-purple-700 focus:text-white">
+					text-indigo-400 hover:text-white hover:bg-indigo-700
+					focus:outline-none focus:bg-indigo-700 focus:text-white">
 					<!-- Menu open: "hidden", Menu closed: "block" -->
 					<svg
 						class="block h-6 w-6"

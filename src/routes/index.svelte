@@ -32,7 +32,7 @@
 			</div>
 			<div class="mt-3 sm:mt-0 sm:ml-3">
 				<a
-					href="/room"
+					href="/roll"
 					class="w-full flex items-center justify-center px-8 py-3 border
 					border-transparent text-base leading-6 font-medium rounded-md
 					text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50

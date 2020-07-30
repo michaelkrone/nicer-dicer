@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary {
+	@apply border border-transparent text-white bg-indigo-600 transition duration-150 ease-in-out;
+}
+
+.primary:hover,
+.primary-hover:hover {
+	@apply bg-indigo-500;
+}
+
+.primary:active,
+.primary-active:active {
+	@apply outline-none text-indigo-400 bg-indigo-100 border-indigo-200;
+}
+
+.primary-focus:focus {
+	@apply outline-none text-indigo-400 bg-indigo-100 border-indigo-200;
+}
+
+.primary[disabled] {
+	@apply outline-none text-indigo-100 bg-indigo-100 border-indigo-200 text-indigo-200;
+}
+
+.accent {
+	@apply border border-transparent text-white bg-orange-500 transition duration-150 ease-in-out;
+}
+
+.accent:hover,
+.accent-hover:hover {
+	@apply text-white bg-orange-400 border-orange-400;
+}
+
+.accent:active,
+.accent-active:active {
+	@apply outline-none text-orange-400 bg-orange-100 border-orange-200;
+}
+
+.accent-focus:focus {
+	@apply outline-none text-orange-400 bg-orange-100 border-orange-200;
+}

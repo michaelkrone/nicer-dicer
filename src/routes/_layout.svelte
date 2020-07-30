@@ -1,5 +1,7 @@
 <script>
 	import Nav from '../components/Nav.svelte';
+	import routes from './_router-links';
+	import Toast from '../components/Toast.svelte';
 
 	export let segment;
 </script>
@@ -8,29 +10,23 @@
 
 </style>
 
-<Nav {segment} />
-
-<header class="bg-white shadow">
-	<div class="max-w-full mx-auto py-6 px-4 sm:px-6 lg:px-8">
-		<h1 class="text-3xl font-bold leading-tight text-gray-900">
-			{(segment || 'start').toUpperCase()}
-		</h1>
-	</div>
+<header class="shadow">
+	<Nav {routes} {segment} />
 </header>
-<main>
-	<div class="max-w-full mx-auto py-6 sm:px-6 lg:px-8">
-		<!-- Replace with your content -->
 
-		<div class="bg-white overflow-hidden">
-			<div class="max-w-screen-xl mx-auto">
-				<div
-					class="z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full
-					lg:pb-28 xl:pb-32 mb-10 mx-auto px-4 sm:mb-12 sm:px-6 md:mb-16
-					lg:mb-20 lg:px-8 xl:mb-28 ">
-					<slot />
-				</div>
-			</div>
+<main class="max-w-full mx-auto py-6 sm:px-6 lg:px-24">
+
+	<div class="overflow-hidden max-w-screen-xl mx-auto">
+		<div
+			class="z-10 pb-16 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full
+			lg:pb-28 xl:pb-32 mb-10 mx-auto px-4 sm:mb-12 sm:px-6 md:mb-16 lg:mb-20
+			lg:px-8 xl:mb-28 ">
+			<!-- content -->
+			<slot />
+			<!-- /content -->
 		</div>
-		<!-- /End replace -->
+
 	</div>
 </main>
+
+<!-- <Toast title="test" text="text" /> -->

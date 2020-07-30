@@ -1,7 +1,14 @@
 <script>
 	import NumberDisplay from '../components/NumberDisplay.svelte';
+	import DiceAvatar from './DiceAvatar.svelte';
 	export let dices = ['?'];
 	export let numbers = ['?'];
+	const formatter = new Intl.DateTimeFormat('en', {
+		hour12: true,
+		hour: 'numeric',
+		minute: '2-digit',
+		second: '2-digit',
+	});
 </script>
 
 <div class="grid grid-cols-1 gap-4">
@@ -9,15 +16,10 @@
 		<div
 			class="rounded-md bg-white shadow max-w-full flex justify-start
 			items-center">
-			<div
-				class="bg-gray-200 text-gray-600 h-16 w-16 mx-4 rounded-full flex
-				items-center justify-center font-thin text-sm md:text-base">
-				<span>D{dices[i]}</span>
-			</div>
-			<p class="text-sm text-gray-500 flex-1 font-thin md:font-light">
-				14:23 - thrown 2 times
-				<br />
-				Average: 36
+			<DiceAvatar count={dices[i]} />
+			<p
+				class="text-xs md:text-sm text-gray-500 flex-1 font-light md:font-normal">
+				{formatter.format(new Date())} - thrown 2 times
 			</p>
 			<NumberDisplay {number} />
 		</div>

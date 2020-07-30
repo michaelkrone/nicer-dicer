@@ -1,46 +1,73 @@
 <script>
 	import { onMount } from 'svelte';
 	import NumberDisplay from '../components/NumberList.svelte';
-	import ws from '../client/websocket';
+	import { random, roles, numbers, channel, username } from '../client/stores';
+	import {
+		roll,
+		joinChannel,
+		isSetRollAction,
+		getRollData,
+		isJoinedAction,
+		getUsernameData,
+		getChannelData,
+	} from '../client/websocket';
 
-	let numbers;
+	export let dices = [6];
+
 	let rolling = false;
-	export let dices = [100, 6];
+	let rand = random(dices);
 
 	onMount(async () => {
-		const socket = await ws.joinChannel();
-		socket.addEventListener('message', (event) => {
-			const data = JSON.parse(event.data);
-			if (data.action === 'roll') {
-				numbers = data.roles;
-				rolling = false;
+		(await joinChannel($username, $channel)).addEventListener(
+			'message',
+			(event) => {
+				if (isJoinedAction(event)) {
+					$channel = getChannelData(event);
+					$username = getUsernameData(event);
+				} else if (isSetRollAction(event)) {
+					$roles += 1;
+					$numbers = getRollData(event);
+					rolling = false;
+				}
 			}
-		});
+		);
 	});
 
-	async function roll() {
-		if (rolling) {
-			return;
+	function getNumbers() {
+		if (!rolling) {
+			rolling = true;
+			roll(dices).catch(() => (rolling = false));
 		}
-		rolling = true;
-		await ws.roll(dices);
 	}
 </script>
 
 <svelte:head>
 	<title>Roll dices nicest</title>
 </svelte:head>
-
 <div>
-	<NumberDisplay {numbers} {dices} />
+	<NumberDisplay numbers={rolling ? $rand : $numbers} {dices} />
 </div>
 
 <div class="rounded-md shadow mt-6 sm:mt-8 md:mt-10">
 	<button
-		on:click={roll}
+		on:click={getNumbers}
 		disabled={rolling ? 'true' : undefined}
 		class="primary w-full flex items-center justify-center px-8 py-3 text-base
 		leading-6 font-medium rounded-md md:py-4 md:text-lg md:px-10">
-		Roll!
+		{#if rolling}Rolling &hellip;{:else}Roll{/if}
 	</button>
+</div>
+
+<div
+	class:hidden={!$username}
+	class="text-center mt-6 lg:mt-8 rounded-md bg-gray-100 border-1
+	border-gray-300 text-gray-500 font-light text-xs p-2">
+	<span class="mr-2">
+		Username:
+		<span class="font-bold">@{$username}</span>
+	</span>
+	<span>
+		<br class="md:hidden" />
+		Channel: {$channel}
+	</span>
 </div>

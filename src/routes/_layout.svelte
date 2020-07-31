@@ -10,17 +10,15 @@
 
 </style>
 
-<header class="shadow">
-	<Nav {routes} {segment} />
-</header>
+<main class="max-w-full h-screen mx-auto bg-gray-100">
+	<header class="shadow">
+		<Nav {routes} {segment} />
+	</header>
 
-<main class="max-w-full mx-auto py-6 sm:px-6 lg:px-24">
-
-	<div class="overflow-hidden max-w-screen-xl mx-auto">
+	<div class="overflow-hidden mx-auto py-6 sm:px-6 lg:px-20">
 		<div
-			class="z-10 pb-16 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full
-			lg:pb-28 xl:pb-32 mb-10 mx-auto px-4 sm:mb-12 sm:px-6 md:mb-16 lg:mb-20
-			lg:px-8 xl:mb-28 ">
+			class="z-10 lg:max-w-6xl lg:pt-20 xl:pt-24 mb-10 mx-auto px-4 sm:mt-8
+			md:mt-10 sm:px-6 lg:px-8">
 			<!-- content -->
 			<slot />
 			<!-- /content -->

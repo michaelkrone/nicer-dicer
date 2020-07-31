@@ -11,16 +11,13 @@
 	});
 </script>
 
-<div class="grid grid-cols-1 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 xl:gap-8">
+
 	{#each numbers as number, i (i)}
 		<div
-			class="rounded-md bg-white shadow max-w-full flex justify-start
+			class="rounded-md bg-white shadow max-w-full flex justify-between
 			items-center">
 			<DiceAvatar count={dices[i]} />
-			<p
-				class="text-xs md:text-sm text-gray-500 flex-1 font-light md:font-normal">
-				{formatter.format(new Date())} - thrown 2 times
-			</p>
 			<NumberDisplay {number} />
 		</div>
 	{/each}

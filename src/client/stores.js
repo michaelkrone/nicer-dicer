@@ -5,7 +5,7 @@ export const random = (max) =>
 	readable(max, function start(set) {
 		const interval = setInterval(() => {
 			set(max.map(makeRandom));
-		}, 50);
+		}, 100);
 
 		return function stop() {
 			clearInterval(interval);

@@ -16,10 +16,11 @@ function getData(event) {
 	return JSON.parse(event.data);
 }
 
-async function send(data) {
-	let s = await init();
-	s.send(JSON.stringify(data));
-	return s;
+function send(data) {
+	return init().then((s) => {
+		s.send(JSON.stringify(data));
+		return s;
+	});
 }
 
 module.exports = {
@@ -38,22 +39,7 @@ module.exports = {
 	roll(max) {
 		return send({ action: 'roll', max });
 	},
-	isRollAction(event) {
-		return getData(event).action === 'roll';
-	},
-	isSetRollAction(event) {
-		return getData(event).action === 'set-roll';
-	},
-	isJoinedAction(event) {
-		return getData(event).action === 'joined';
-	},
-	getRollData(event) {
-		return getData(event).roles;
-	},
-	getChannelData(event) {
-		return getData(event).channel;
-	},
-	getUsernameData(event) {
-		return getData(event).username;
+	isAction(event, action) {
+		return getData(event).action === action;
 	},
 };

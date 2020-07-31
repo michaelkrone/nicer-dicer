@@ -18058,43 +18058,42 @@ video {
 .primary-active:active {
   outline: 0;
   --text-opacity: 1;
-  color: #7f9cf5;
-  color: rgba(127, 156, 245, var(--text-opacity));
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
   --bg-opacity: 1;
-  background-color: #ebf4ff;
-  background-color: rgba(235, 244, 255, var(--bg-opacity));
+  background-color: #7f9cf5;
+  background-color: rgba(127, 156, 245, var(--bg-opacity));
   --border-opacity: 1;
-  border-color: #c3dafe;
-  border-color: rgba(195, 218, 254, var(--border-opacity));
+  border-color: #5a67d8;
+  border-color: rgba(90, 103, 216, var(--border-opacity));
 }
 
 .primary-focus:focus {
   outline: 0;
   --text-opacity: 1;
-  color: #7f9cf5;
-  color: rgba(127, 156, 245, var(--text-opacity));
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
   --bg-opacity: 1;
-  background-color: #ebf4ff;
-  background-color: rgba(235, 244, 255, var(--bg-opacity));
+  background-color: #7f9cf5;
+  background-color: rgba(127, 156, 245, var(--bg-opacity));
   --border-opacity: 1;
-  border-color: #c3dafe;
-  border-color: rgba(195, 218, 254, var(--border-opacity));
+  border-color: #5a67d8;
+  border-color: rgba(90, 103, 216, var(--border-opacity));
 }
 
-.primary[disabled] {
+.primary[disabled],
+.primary[disabled]:hover {
   outline: 0;
-  --text-opacity: 1;
-  color: #ebf4ff;
-  color: rgba(235, 244, 255, var(--text-opacity));
-  --bg-opacity: 1;
-  background-color: #ebf4ff;
-  background-color: rgba(235, 244, 255, var(--bg-opacity));
-  --border-opacity: 1;
-  border-color: #c3dafe;
-  border-color: rgba(195, 218, 254, var(--border-opacity));
   --text-opacity: 1;
   color: #c3dafe;
   color: rgba(195, 218, 254, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #7f9cf5;
+  background-color: rgba(127, 156, 245, var(--bg-opacity));
+  --border-opacity: 1;
+  border-color: #c3dafe;
+  border-color: rgba(195, 218, 254, var(--border-opacity));
+  cursor: not-allowed;
 }
 
 .accent {
